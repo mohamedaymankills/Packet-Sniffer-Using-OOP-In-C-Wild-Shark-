@@ -32,9 +32,9 @@ sudo apt install libpcap-dev gcc
 Clone the repository and compile the code:
 
 ```sh
-git clone https://github.com/mohamedaymankills/WildShark.git
-cd WildShark
-gcc -o Wild_Shark WildShark.c -lpcap
+git clone https://github.com/mohamedaymankills/Packet-Sniffer-Using-OOP-In-C-Wild-Shark.git
+cd Wild_Shark
+gcc -o Wild_Shark Wild_Shark.c -lpcap
 ```
 
 ## Usage
