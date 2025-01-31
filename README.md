@@ -72,6 +72,36 @@ sudo ./Wild_Shark <interface> <filter-expression>
   ```
 
 ## How It Works
+```
+┌────────────────────┐
+│ Start Program      │
+└────────┬──────────┘
+         ↓
+┌────────────────────────┐
+│ Parse CLI Arguments    │
+│ Interface, Filter Expr │
+└────────┬──────────────┘
+         ↓
+┌─────────────────────────────┐
+│ Open Interface with pcap    │
+│ Compile & Set Filter        │
+└────────┬───────────────────┘
+         ↓
+┌──────────────────────────────────┐
+│ Capture Packets in Loop          │
+│ Identify IP, TCP, UDP            │
+│ Call Corresponding Parser        │
+└────────┬─────────────────────────┘
+         ↓
+┌───────────────────────┐
+│ Print Packet Details  │
+│ Free Memory           │
+└────────┬─────────────┘
+         ↓
+┌──────────────────────┐
+│ Close Sniffer Handle │
+└──────────────────────┘
+```
 
 1. **Opens the network interface** in promiscuous mode.
 2. **Applies the packet filter** (if provided).
